@@ -1,0 +1,14 @@
+D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.deps.json
+D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.json
+D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.runtimeconfig.dev.json
+D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.dll
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csproj.CoreCompileInputs.cache
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cache
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorAssemblyInfo.cs
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfoInputs.cache
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.AssemblyInfo.cs
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAssemblyInfo.cache
+D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
