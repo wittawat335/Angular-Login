@@ -32,6 +32,9 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Inject Appsettings
+            services.Configure<ApplicationSettings>(Configuration.GetSection("ApplicationSettings"));
+
             services.AddMvc()
           .AddJsonOptions(options =>
           {
@@ -59,7 +62,7 @@ namespace WebApi
             });
 
             //jwt Authentication
-            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSttings:JWT_Secret"].ToString());
+            var key = Encoding.UTF8.GetBytes(Configuration["ApplicationSettings:JWT_Secret"].ToString());
             services.AddAuthentication(x => 
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -92,7 +95,7 @@ namespace WebApi
                 app.UseHsts();
             }
 
-            app.UseCors(builder => builder.WithOrigins(Configuration["ApplicationSttings:Client_URL"].ToString())
+            app.UseCors(builder => builder.WithOrigins(Configuration["ApplicationSettings:Client_URL"].ToString())
                 .AllowAnyHeader()
                 .AllowAnyMethod()); //
 

@@ -20,11 +20,13 @@ namespace WebApi.Controllers
     {
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _singInManager;
+        private ApplicationSettings _appSetting;
 
-        public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IOptions<ApplicationSettings> appSetting)
         {
             _userManager = userManager;
             _singInManager = signInManager;
+            _appSetting = appSetting.Value;
         }
 
         [HttpPost]
@@ -60,12 +62,12 @@ namespace WebApi.Controllers
                 {
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
-                        Subject = new System.Security.Claims.ClaimsIdentity(new Claim[]
+                        Subject = new ClaimsIdentity(new Claim[]
                         {
-                            new Claim("UserID", user.Id.ToString())
+                            new Claim("UserID",user.Id.ToString())
                         }),
-                        Expires = DateTime.UtcNow.AddMinutes(5),
-                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes("12132345655854")), SecurityAlgorithms.HmacSha256Signature)
+                        Expires = DateTime.UtcNow.AddDays(1),
+                        SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSetting.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
                     };
                     var tokenHandler = new JwtSecurityTokenHandler();
                     var securityToken = tokenHandler.CreateToken(tokenDescriptor);
@@ -78,7 +80,7 @@ namespace WebApi.Controllers
                     return BadRequest(new { message = "username or password is incorrect." });
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw ex;
             }
