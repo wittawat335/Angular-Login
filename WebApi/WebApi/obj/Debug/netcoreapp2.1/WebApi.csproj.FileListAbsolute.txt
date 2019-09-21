@@ -11,3 +11,4 @@ D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.RazorTargetAsse
 D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\WebApi.pdb
 D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.dll
 D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
+D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
