@@ -47,6 +47,7 @@ namespace WebApi
       options.UseSqlServer(Configuration.GetConnectionString("IdentityConnection")));
 
             services.AddDefaultIdentity<ApplicationUser>()
+                .AddRoles<IdentityRole>() //add Role
                 .AddEntityFrameworkStores<AuthenticationContext>();
 
             services.AddCors();

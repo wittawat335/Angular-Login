@@ -48,5 +48,29 @@ namespace WebApi.Controllers
                 throw;
             }       
         }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        [Route("ForAdmin")]
+        public string GetForAdmin()
+        {
+            return "Hello Admin";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Customer")]
+        [Route("ForCustomer")]
+        public string GetForCustomer()
+        {
+            return "Hello Customer";
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Customer,Admin")]
+        [Route("ForCustomerAndAdmin")]
+        public string GetForCustomerAndAdmin()
+        {
+            return "Hello All";
+        }
     }
 }

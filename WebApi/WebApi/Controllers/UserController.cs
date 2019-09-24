@@ -34,6 +34,8 @@ namespace WebApi.Controllers
         //POST : /api/User/Register
         public async Task<Object> PostUser(ApplicationUserModel model)
         {
+            //model.Role = "Customer";
+            model.Role = "Admin";
             var user = new ApplicationUser();
             user.UserName = model.UserName;
             user.Email = model.Email;
@@ -42,6 +44,7 @@ namespace WebApi.Controllers
             try
             {
                 var res = await _userManager.CreateAsync(user, model.Password);
+                await _userManager.AddToRoleAsync(user, model.Role);
                 return Ok(res);
             }
             catch (Exception ex)
@@ -60,11 +63,16 @@ namespace WebApi.Controllers
                 var user = await _userManager.FindByNameAsync(model.UserName);
                 if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
                 {
+                    //Get role assigned to the user
+                    var role = await _userManager.GetRolesAsync(user);
+                    IdentityOptions _options = new IdentityOptions();
+
                     var tokenDescriptor = new SecurityTokenDescriptor
                     {
                         Subject = new ClaimsIdentity(new Claim[]
                         {
-                            new Claim("UserID",user.Id.ToString())
+                            new Claim("UserID",user.Id.ToString()),
+                            new Claim(_options.ClaimsIdentity.RoleClaimType,role.FirstOrDefault())
                         }),
                         Expires = DateTime.UtcNow.AddDays(1),
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_appSetting.JWT_Secret)), SecurityAlgorithms.HmacSha256Signature)
