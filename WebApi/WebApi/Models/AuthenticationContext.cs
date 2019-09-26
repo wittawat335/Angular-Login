@@ -15,5 +15,7 @@ namespace WebApi.Models
         }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<Bank> Bank { get; set; }
+        public DbSet<BankAccount> BankAccount { get; set; }
     }
 }
