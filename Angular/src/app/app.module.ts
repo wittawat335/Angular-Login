@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { AdminComponent } from './admin/admin.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { BankComponent } from './bank/bank.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ForbiddenComponent } from './forbidden/forbidden.component';
     LoginComponent,
     HomeComponent,
     AdminComponent,
-    ForbiddenComponent
+    ForbiddenComponent,
+    BankComponent
   ],
   imports: [
     BrowserModule,

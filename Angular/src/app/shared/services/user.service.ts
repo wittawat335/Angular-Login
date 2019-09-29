@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { HttpClient } from "@angular/common/http";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +9,7 @@ import { HttpClient } from "@angular/common/http";
 export class UserService {
 
   constructor(private formBuild:FormBuilder, private http: HttpClient) { }
-  readonly BaseURI = 'https://localhost:44392/api';
+  // readonly BaseURI = 'https://localhost:44392/api';
 
   formModel = this.formBuild.group({
     UserName : ['', Validators.required],
@@ -38,15 +39,15 @@ export class UserService {
       FullName: this.formModel.value.FullName,
       Password: this.formModel.value.Passwords.Password
     };
-    return this.http.post(this.BaseURI + '/User/Register', body);
+    return this.http.post(environment.apiBaseURI + '/User/Register', body);
   }
 
   login(formData) {
-    return this.http.post(this.BaseURI + '/User/Login', formData);
+    return this.http.post(environment.apiBaseURI + '/User/Login', formData);
   }
 
   getUserProfile() {
-    return this.http.get(this.BaseURI + '/UserProfile');
+    return this.http.get(environment.apiBaseURI + '/UserProfile');
   }
 
   roleMacth(allowedRoles): boolean{
