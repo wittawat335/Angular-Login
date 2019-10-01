@@ -7,30 +7,30 @@ import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styles: []
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
   formModel = {
     UserName: '',
-    Password: ''   
-  }
+    Password: ''
+  };
 
-  constructor(private service: UserService, private router: Router,private toastr: ToastrService) { }
+  constructor(private service: UserService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() {
-    if (localStorage.getItem('token') != null)
+    if (localStorage.getItem('token') != null) {
       this.router.navigateByUrl('/home');
+    }
   }
-  onSubmit(form: NgForm){
-    this.service.login(form.value).subscribe((res:any) => {
+  onSubmit(form: NgForm) {
+    this.service.login(form.value).subscribe((res: any) => {
       localStorage.setItem('token', res.token);
       this.router.navigateByUrl('/home');
     },
     err => {
-      if(err.status == 400){
+      if (err.status === 400) {
         this.toastr.error('erroe');
-      }
-      else{
+      } else {
         console.log(err);
       }
     }

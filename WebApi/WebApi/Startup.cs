@@ -51,7 +51,7 @@ namespace WebApi
                 .AddEntityFrameworkStores<AuthenticationContext>();
 
             services.AddCors();
-
+            
             // ตั้งค่า Password ตอน create user 
             services.Configure<IdentityOptions>(options =>
             {

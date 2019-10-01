@@ -14,11 +14,7 @@ input.form-control:focus{
     box-shadow: none;
 }
 
-button[type=submit].btn{
-    border-radius: 20px;
-    background-color: #04c582;
-    color: #fff;
-}
+
 
 div.form-group label:not(.text-danger){
     color: #545d6a;
@@ -47,7 +43,7 @@ div.form-group.required>label:first-child:after{
   .wrapped-div {
     -webkit-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
-    background: #2e3137;
+    background: #abafb8;
     padding: 30px;
     width: 90%;
     max-width: 450px;
@@ -93,4 +89,10 @@ div.form-group.required>label:first-child:after{
     text-transform: uppercase;
     font-size: 0.9rem;
  }
-
+ .text-center{
+    font-family: helvetica;
+    color: white;
+    position: relative;
+    top: 50px;
+ }
+ 

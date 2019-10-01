@@ -13,4 +13,3 @@ D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.pdb
 D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\appsettings.Development.json
 D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\appsettings.json
 D:\Git\AngularLogin\WebApi\WebApi\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
-D:\Git\AngularLogin\WebApi\WebApi\obj\Debug\netcoreapp2.1\WebApi.csprojAssemblyReference.cache
